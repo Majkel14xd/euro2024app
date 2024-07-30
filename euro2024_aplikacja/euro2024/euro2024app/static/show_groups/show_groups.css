@@ -1,0 +1,50 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.group h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.team {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.team:last-child {
+  border-bottom: none;
+}
+
+
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .group h2 {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+
+  .team {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .group {
+    margin-bottom: 15px;
+  }
+}

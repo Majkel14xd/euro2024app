@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj Mecz</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index/index.css' %}">
+</head>
+<body>
+    <h1>Dodaj Nowy Mecz</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>ID_Stadionu: {{ form.ID_Stadionu }}</p>
+        <p>Data_meczu (format YYYY-MM-DD): {{ form.Data_meczu }}</p>
+        <p>Faza_turnieju: {{ form.Faza_turnieju }}</p>
+        <p>ID Gospodarz_ID_Druzyny: {{ form.Gospodarz_ID_Druzyny }}</p>
+        <p>ID Gosc_ID_Druzyny: {{ form.Gosc_ID_Druzyny }}</p>
+        <button type="submit">Dodaj Mecz</button>
+    </form>
+</body>
+</html>

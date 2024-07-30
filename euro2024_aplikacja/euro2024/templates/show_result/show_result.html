@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły meczu</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'index/index.css' %} "
+    />
+</head>
+<body>
+    <h1>Wybierz mecz</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Szczegóły meczu</button>
+    </form>
+
+    {% if match %}
+    <div class="match-details">
+        <h1>Szczegóły meczu</h1>
+        <p>Mecz ID: {{ match.ID_Meczu }}</p>
+        <p>Stadion: {{ match.ID_Stadionu.Nazwa_stadionu }}</p>
+        <p>Data: {{ match.Data_meczu }}</p>
+        <p>Faza: {{ match.Faza_turnieju }}</p>
+        <p>Gospodarz_ID_Druzyny: {{ match.Gospodarz_ID_Druzyny.Nazwa_druzyny }}</p>
+        <p>Gosc_ID_Druzyny: {{ match.Gosc_ID_Druzyny.Nazwa_druzyny }}</p>
+
+        <h2>Wynik</h2>
+        <p>Gospodarz Gole: {{ wynik.Gospodarz_ilosc_goli }}</p>
+        <p>Gosc Gole: {{ wynik.Gosc_ilosc_goli }}</p>
+
+        <h2>Statystyki meczu</h2>
+        <p>Gospodarz Posiadanie pilki: {{ statystyki.Posiadanie_pilki_gospodarzy }}%</p>
+        <p>Gosc Posiadanie pilki: {{ statystyki.Posiadanie_pilki_gosci }}%</p>
+        <p>Gospodarz Strzaly: {{ statystyki.Strzaly_gospodarzy }}</p>
+        <p>Gosc Strzaly: {{ statystyki.Strzaly_gosci }}</p>
+        <p>Gospodarz Stzrzały w bramke celne: {{ statystyki.Strzaly_celne_gospodarzy }}</p>
+        <p>Gosc Stzrzały w bramke celne: {{ statystyki.Strzaly_celne_gosci }}</p>
+        <p>Gospodarz Zolte Kartki: {{ statystyki.Zolte_kartki_gospodarzy }}</p>
+        <p>Gosc Zolte Kartki: {{ statystyki.Zolte_kartki_gosci }}</p>
+        <p>Gospodarz Czerwone Kartki: {{ statystyki.Czerwone_kartki_gospodarzy }}</p>
+        <p>Gosc Czerwone Kartki: {{ statystyki.Czerwone_kartki_gosci }}</p>
+    {% endif %}
+    </div>
+</body>
+</html>

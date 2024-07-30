@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna Euro 2024</title>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'index/index.css' %} "
+    />
+</head>
+<body>
+    <div class="center-panel">
+        <h2>EURO2024</h2>
+        <a href="add_player"  id="add_player">Dodaj zawodnika</a>
+            <a href="add_match"  id="add_match">Dodaj mecz</a>
+                <a href="add_result"  id="add_result">Dodaj wyniki</a>
+                    <a href="add_statistic" id="add_statistic">Dodaj statystyki meczu</a>
+                        <a href="show_groups " id="show_groups">Wyświetl grupy</a>
+                            <a href="show_result" id="show_result">Wyświetl wyniki meczu z statystykami</a>
+      </div>
+<footer>
+    <p>&copy; 2024 Euro 2024. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+</body>
+</html>

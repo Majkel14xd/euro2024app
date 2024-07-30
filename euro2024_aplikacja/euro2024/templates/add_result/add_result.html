@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj Wynik</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'index/index.css' %} "
+    />
+</head>
+<body>
+    <h1>Dodaj Nowy Wynik</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>ID_Meczu: {{ form.ID_Meczu }}</p>
+        <p>Gospodarz_ilosc_goli: {{ form.Gospodarz_ilosc_goli }}</p>
+        <p>Gosc_ilosc_goli: {{ form.Gosc_ilosc_goli }}</p>
+        <button type="submit">Dodaj Wynik</button>
+    </form>
+</body>
+</html>

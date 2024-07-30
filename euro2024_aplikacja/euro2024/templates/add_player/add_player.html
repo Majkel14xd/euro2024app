@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj gracza</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'index/index.css' %} "
+    />
+</head>
+<body>
+    <h1>Dodaj gracza</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Imie: {{ form.Imie }}</p>
+        <p>Nazwisko: {{ form.Nazwisko }}</p>
+        <p>Pozycja: {{ form.Pozycja }}</p>
+        <p>ID Druzyny: {{ form.ID_Druzyny }}</p>
+        <input type="submit" value="Dodaj gracza">
+    </form>
+</body>
+</html>
